@@ -3,14 +3,12 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
+const sequelize = require('./config/connection');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const sequelize = require('./config/connection');
-
 const hbs = exphbs.create({});
-
-// const sequilize = require('/.config/connection');
 
 
 // const helpers = require('./utils/helpers');
@@ -23,7 +21,7 @@ app.use (express.static(path.join(__dirname, 'public')));
 
 app.use (routes);
 
-sequilize.sync({ force: false}).then(() =>{
+sequelize.sync({ force: false}).then(() =>{
   app.listen(PORT, () => console.log('Now Listening'));
 });
   
