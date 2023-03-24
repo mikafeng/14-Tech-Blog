@@ -1,19 +1,37 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    // Here, index.html is rendered
-    res.render('homepage');
+    try{
+        const postData = await Post.findAll ({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+
+        const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', {
+        posts,
+        logged_in: req.session.logged_in
+    });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {
-    // if (req.session.loggedIn) {
-    //     res.redirect('/');
-    //     return;
-    // }
+    if (req.session.loggedIn) {
+        res.redirect('/profile');
+        return;
+    }
 
     res.render('login');
-})
+});
 
 //GET profile page for user
 router.get('/profile', async (req, res) => {
@@ -23,12 +41,13 @@ router.get('/profile', async (req, res) => {
             include: [{model: Post}],
         });
 
-        // const user = userData.get({plain: true});
+        const user = userData.get({plain: true});
 
-        res.render('profile' 
-        // , { ..user,
-        // logged_in:}
-            );
+        res.render('profile', {
+            ...user,
+        logged_in: true
+        });
+
     } catch (err) {
         res.status(500).json(err);
     }
