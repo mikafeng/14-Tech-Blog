@@ -1,38 +1,59 @@
-{{!-- LOGIN --}}
-<form class="form login-form">
-    <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-    </div>
-</form>
-</div>
-{{!-- SIGNUP --}}
-<div class="col-md-6">
-<form class="form signup-form">
-    <div class="form-group">
-        <label for="name-signup">Name:</label>
-        <input type="text" class="form-control" id="name-signup" aria-describedby="name"/>
-    </div>
-    <div class="form-group">
-        <label for="email-signup">Email address:</label>
-        <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp"
-            placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="pasword-signup">Password</label>
-        <input type="password" class="form-control" id="password-signup" placeholder="Password">
-    </div>
-    <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+
+<div class="">
+
+{{!-- LOGIN --}} 
+<div class="min-vh-100 d-flex align-items-center bg-dark">
+    <section class="w-100 row justify-content-center">
+        <div class="col-10 col-md-6 col-lg-5">
+
+
+            <h1 class="display-3 text-center text-white">Log In</h1>
+            <form class="bg-white my-4 p-4 rounded">
+
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="text" id="email-login" class="form-control" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <label for="pwd-login">Password</label>
+                    <input type="text" id="login-signin" class="form-control" placeholder="Password" />
+                </div>
+                
+                <button id="submit" class="btn btn-block btn-success">Log In</button>
+            </form>
+        </div>
+    </section>
 </div>
 
-<script src="../public/js/login.js"></script>
+{{!-- SIGNUP --}}
+<div class="min-vh-100 d-flex align-items-center bg-dark">
+    <section class="w-100 row justify-content-center">
+        <div class="col-10 col-md-6 col-lg-5">
+
+            <h1 class="display-3 text-center text-white">Sign Up!</h1>
+            <form class="bg-white my-4 p-4 rounded">
+                <h3>Fill out the form and get started!</h3>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                    <label for="email-signin">Email</label>
+                    <input type="text" id="email-signup" class="form-control" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <label for="pwd-signin">Password</label>
+                    <input type="text" id="pwd-signin" class="form-control" placeholder="Password" />
+                </div>
+
+                <button id="submit" class="btn btn-block btn-success">Complete Signup!</button>
+
+            </form>
+        </div>
+    </section>
+
+</div>
+
+</div>
+<script src="./js/login.js"></script>
