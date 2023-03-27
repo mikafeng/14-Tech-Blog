@@ -1,17 +1,15 @@
-<h1>HomePage</h1>
 
 {{#each posts as |post| }}
 <div class="row mb-4 project">
     <div class="col-md-5">
         <h2>
-
-            <a href="/post/{{post.id}}">{{post.title}}</a>
-
-        {{!-- <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p> --}}
+        <a href="/post/{{post.id}}">{{post.title}}</a>
+        
     </div>
     <div class="col-md-7">
+        <p>{{post.post_text}}</p>
         <p>
-            {{post.post_text}}
+            Created by {{post.user.username}} on {{format_date post.date_created}}
         </p>
     </div>
 </div>
