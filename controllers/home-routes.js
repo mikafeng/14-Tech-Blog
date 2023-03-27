@@ -20,6 +20,27 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model:User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+
+        const post = postData.get({plain:true});
+
+        res.render('post', {
+            ...post,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/profile', withAuth, async (req, res) => {
     try{
