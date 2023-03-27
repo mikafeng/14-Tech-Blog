@@ -10,20 +10,39 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
+<body>
+<header class="display-flex ">
     <div class="jumbotron text-center">
         <h1>Tech Blog</h1>
     </div>
-    <nav>
-        {{> nav}}
+    <nav class="navbar navbar-expand-sm">
+
+            <a class="nav-link" href="/">Home</a>
+             
+             {{#if loggedIn}}
+    
+            <a class="nav-link" href="/profile">Dashboard</a>
+
+            <a class="nav-link" id="logout" href="/">Logout</a>
+
+            {{else}}
+
+            <a class="nav-link" id="login" href="/login">Login</a>
+
+            {{/if}}
+
     </nav>
+</header>
 
-<body>
-    <main class="container container-fluid mt-5">
-        <div>
-            {{{body}}}
-        </div>
-    </main>
-        
+<main class="container container-fluid mt-5">
+    <div>
+        {{{body}}}
+    </div>
+</main>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
 </body>
-
 </html>
