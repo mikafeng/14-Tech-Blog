@@ -30,14 +30,14 @@ router.get('/:id', (req, res) => {
 //SIGNUP
 router.post('/', (req, res) => {
     User.create({
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password
     })
     .then(userData => {
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.name = userData.name;
+            req.session.name = userData.username;
             req.session.logged_in = true;
 
             res.json(userData);

@@ -10,11 +10,11 @@ Post.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    description: {
+    post_text: {
         type: DataTypes.STRING,
     },
     date_created: {
@@ -24,8 +24,7 @@ Post.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        foreignKey: {
+        references: {
             model: 'user',
             key: 'id',
         },
