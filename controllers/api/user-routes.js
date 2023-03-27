@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
-})
+});
 
 //SIGNUP
 router.post('/', (req, res) => {
@@ -51,7 +51,6 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
     })
 });
-
 
 //LOGIN
 router.post('/login', async (req, res) => {
@@ -91,7 +90,6 @@ router.post('./logout', (req, res) => {
         res.status(404).end();
     }
 })
-
 
 
 module.exports = router;
