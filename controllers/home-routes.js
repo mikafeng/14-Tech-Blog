@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
@@ -19,20 +20,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/profile');
-        return;
-    }
 
-    res.render('login');
-});
-
-//GET profile page for user
-router.get('/profile/:id', async (req, res) => {
-    if(!req.session.loggedIn) {
-        res.redirect('/login');
-    }
+router.get('/profile', withAuth, async (req, res) => {
     try{
         const userData = await User.findByPk(req.session.user_id, {
             attributes: {exclude: ['password']},
@@ -42,12 +31,22 @@ router.get('/profile/:id', async (req, res) => {
         const user = userData.get({plain: true});
 
         res.render('profile', {
-            user,
-            loggedIn: req.session.loggedIn,
+            ...user,
+            loggedIn: true
         });
 
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/profile');           
+        return;
+    }
+
+    res.render('login');
+});
+
 module.exports = router;
