@@ -30,26 +30,19 @@ router.get('/:id', (req, res) => {
 });
 
 //SIGNUP
-router.post('/', (req, res) => {
-    User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
-    })
-    .then(userData => {
+router.post('/', async (req, res) => {
+    try{
+        const userData = await User.create(req.body);
+   
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.name = userData.username;
             req.session.logged_in = true;
 
             res.json(userData);
         });
-    })
-    .catch(err => {
-        console.log('unable to create user');
-        console.log(err);
-        res.status(500).json(err);
-    })
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 //LOGIN
@@ -81,7 +74,7 @@ router.post('/login', async (req, res) => {
 });
 
 //LOGOUT
-router.post('./logout', (req, res) => {
+router.post('/logout', (req, res) => {
     if(req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();

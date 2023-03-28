@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
     height: 100%;
 }
@@ -32,7 +32,7 @@ a:active {
 }
 
 /* -------- NAVIGATION BAR ------------- */
-.navbar {
+/*.navbar {
     margin-bottom: 0;
     background-color: #203435df;
     z-index: 9999;
@@ -61,7 +61,7 @@ a:active {
 }
  */ 
 
- .no-button {
+/* .no-button {
      background: none;
      border: none;
      padding: 0;
@@ -74,4 +74,4 @@ a:active {
  .no-button:hover {
      color: #065b83;
      text-decoration: underline;
- }
+ } */

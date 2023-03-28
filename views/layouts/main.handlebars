@@ -20,21 +20,17 @@
         </h4>
 
     <nav class="font-weight-bold">
-        {{#if loggedIn}}
-
+        {{#if logged_in}}
         <li>
-           <a href="/profile">Dashboard</a> 
+           <a class ="nav-link" href="/profile">Dashboard</a> 
         </li>
         <li>
-            <a id="logout" href="/">Logout</a>
+           <a class="nav-link" href="/">LogOut</a>
         </li>
-
         {{else}}
-
         <li>
-            <a href="/login">Login</a>
+            <a class="nav-link" href="/login">Login</a>
         </li>
-
         {{/if}}
     </nav>
 </header>
@@ -46,7 +42,7 @@
 </main>
 
 {{#if logged_in}}
-<script src="/js/logout.js"></script>
+<script src="./js/logout.js"></script>
 {{/if}}
 
 </body>
