@@ -12,6 +12,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
+            //redirect to dashboard/profile page
             document.location.replace('/profile');
         } else {
             alert(response.statusText);
@@ -34,6 +35,7 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
+            //redirect to dashboard/profile page
             document.location.replace('/profile');
         } else {
             alert(response.statusText);

@@ -4,17 +4,20 @@ const newFormHandler = async (event) => {
     const comment = document.querySelector('#post-comment').value.trim();
 
     if (comment) {
-        const response = await fetch(`/api/projects`, {
+        const response = await fetch(`/api/comment`, {
             method: 'POST',
-            body: JSON.stringify({ name, needed_funding, description }),
+            body: JSON.stringify({ comment }),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            //redierect to home with updated post comment
+            document.location.replace('/homepage');
         } else {
-            alert('Failed to create project');
+            alert('Failed to create post');
         }
     }}
+
+    //maybe redirect to single post page commented on?

@@ -53,7 +53,9 @@ router.get('/profile', withAuth, async (req, res) => {
 
         res.render('profile', {
             ...user,
-            loggedIn: true
+            //test
+            loggedIn: req.session.logged_in
+            // loggedIn: true
         });
 
     } catch (err) {
@@ -67,7 +69,10 @@ router.get('/login', (req, res) => {
         return;
     }
 
-    res.render('login');
+    res.render('login', {
+        //test
+        loggedIn: req.session.logged_in,
+    });
 });
 
 module.exports = router;

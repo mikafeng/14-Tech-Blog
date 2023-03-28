@@ -12,25 +12,30 @@
 
 <body>
 <header class="display-flex ">
-    <div class="jumbotron text-center">
-        <h1>Tech Blog</h1>
+    <div class=" shadow-sm jumbotron text-center">
+        <h1 class="display-1 ">Tech Blog</h1>
     </div>
-    <nav class="navbar navbar-expand-sm">
+        <h4>
+           <a class="nav-link font-weight-bold" href="/">Home</a> 
+        </h4>
 
-            <a class="nav-link" href="/">Home</a>
-             
-             {{#if loggedIn}}
-    
-            <a class="nav-link" href="/profile">Dashboard</a>
+    <nav class="font-weight-bold">
+        {{#if loggedIn}}
 
-            <a class="nav-link" id="logout" href="/">Logout</a>
+        <li>
+           <a href="/profile">Dashboard</a> 
+        </li>
+        <li>
+            <a id="logout" href="/">Logout</a>
+        </li>
 
-            {{else}}
+        {{else}}
 
-            <a class="nav-link" id="login" href="/login">Login</a>
+        <li>
+            <a href="/login">Login</a>
+        </li>
 
-            {{/if}}
-
+        {{/if}}
     </nav>
 </header>
 
