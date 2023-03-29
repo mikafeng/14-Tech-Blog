@@ -24,14 +24,14 @@ You will need the following dependencies, which are in the package.json file.
     `express-session`
     `mysql2`
     `nodemon`
-    `sequelize`
+    `sequelize`.
 
 Run `npm i` at the project root to install needed dependencies and create your own .env file with database credentials.
 Run `npm start` to start the server.
 The default port is 3000 and will run on http://localhost:3000/.
 
 ## Preview
-<img width="800" alt="Screen Shot 2023-03-29 at 4 08 46 PM" src="https://user-images.githubusercontent.com/110942241/228656255-42058b88-747a-4448-a811-ad8975c9be33.png">
-<img width="800" alt="Screen Shot 2023-03-29 at 4 08 46 PM" src="https://user-images.githubusercontent.com/110942241/228656698-6dca4ea5-a790-45e7-a834-45decbc86047.png">
+<img width="600" alt="Screen Shot 2023-03-29 at 4 08 46 PM" src="https://user-images.githubusercontent.com/110942241/228656255-42058b88-747a-4448-a811-ad8975c9be33.png">
 
+<img width="600" alt="Screen Shot 2023-03-29 at 4 14 10 PM" src="https://user-images.githubusercontent.com/110942241/228656826-07aa683b-2b0e-429a-baee-d394d752073f.png">
 
