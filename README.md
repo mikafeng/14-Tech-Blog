@@ -1,6 +1,7 @@
 # Tech-Blog
 
 A CMS style blog using a MVC framework that revolves around users sharing their thoughts on tech.
+View live demo [Here](https://git.heroku.com/tech-blog-ie.git).
 
 ## Desription
 
