@@ -1,4 +1,4 @@
-## Tech-Blog
+# Tech-Blog
 
 A CMS style blog using a MVC framework that revolves around users sharing their thoughts on tech.
 
@@ -11,7 +11,7 @@ Navigation is served by express routes where users can sign up, log in, log out 
 Once a user signs up, their login information will be saved safely on the server side using a mysql database with encrypted passwords. 
 
 
-# Installation
+## Installation
  
 To utilize the blog framework, clone the repo to you local environment.
 
@@ -30,7 +30,7 @@ Run `npm i` at the project root to install needed dependencies and create your o
 Run `npm start` to start the server.
 The default port is 3000 and will run on http://localhost:3000/.
 
-# Preview
+## Preview
 <img width="1073" alt="Screen Shot 2023-03-29 at 4 08 46 PM" src="https://user-images.githubusercontent.com/110942241/228656255-42058b88-747a-4448-a811-ad8975c9be33.png">
 
 
