@@ -31,3 +31,6 @@ Run `npm start` to start the server.
 The default port is 3000 and will run on http://localhost:3000/.
 
 # Preview
+<img width="1073" alt="Screen Shot 2023-03-29 at 4 08 46 PM" src="https://user-images.githubusercontent.com/110942241/228656255-42058b88-747a-4448-a811-ad8975c9be33.png">
+
+
