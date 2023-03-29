@@ -2,13 +2,14 @@
     <h2 class="p-md-3">{{title}}</h2>
     <p>{{post_text}}</p>
     <p>Created by {{user.username}} on {{format_date date_created}}</p>
+    <p>{{comment_text}}</p>
     <p>
        
         <p>Comment:</p>
-            <div class="form-group">
-                <input class="form-input" type="text" id="post-comment" />
+            <div class="form-group new-comment" id="post-comment">
+                <input class="form-input" type="text" id="post-comment" name="post-comment"/>
+                 <button id="submit" class="btn btn-primary">Submit</button>
             </div>
-        <button id="commentbtn" class="btn btn-primary">Submit</button>
     </p>
 </div>
 

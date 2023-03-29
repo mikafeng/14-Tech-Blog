@@ -1,23 +1,20 @@
-// const newFormHandler = async (event) => {
-//     event.preventDefault();
+const newCommentHandler = async (event) => {
+    event.preventDefault();
 
-//     const comment = document.querySelector('#post-comment').value.trim();
+    const comment_text = document.querySelector('#post-comment').value.trim();
+    if (comment_text) {
+        const response = await fetch('/api/comments', {
+            method: 'POST',
+            body: JSON.stringify({comment_text}),
+            headers: { 'Content-Type': 'application/json' }
+        });
 
-//     if (comment) {
-//         const response = await fetch(`/api/comment`, {
-//             method: 'POST',
-//             body: JSON.stringify({ comment }),
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//         });
+        if (response.ok) {
+            document.location.replace('/post');
+        } else {
+            alert('failed to post comment');
+        }
+    }
+};
 
-//         if (response.ok) {
-//             //redierect to home with updated post comment
-//             document.location.replace('/homepage');
-//         } else {
-//             alert('Failed to create post');
-//         }
-//     }}
-
-//     //maybe redirect to single post page commented on?
+document.querySelector('.new-comment').addEventListener('submit', newCommentHandler);
